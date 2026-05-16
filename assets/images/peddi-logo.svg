@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 44">
+  <defs>
+    <linearGradient id="lp" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#6b2c00"/>
+      <stop offset="100%" stop-color="#b85a0a"/>
+    </linearGradient>
+    <linearGradient id="rp" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#cc7008"/>
+      <stop offset="100%" stop-color="#f2ae1a"/>
+    </linearGradient>
+    <linearGradient id="spine-g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#4a1c00"/>
+      <stop offset="100%" stop-color="#6e3008"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Drop shadow -->
+  <ellipse cx="29" cy="42" rx="22" ry="1.6" fill="#1a0800" opacity="0.22"/>
+
+  <!-- ── Left page (dictionary text side) ──────────────────────── -->
+  <path d="M 2,36 L 2,6 Q 2,3 5,3 L 22,3 L 22,35 Q 13,34 2,36 Z"
+        fill="url(#lp)"/>
+
+  <!-- Page corner fold -->
+  <path d="M 18,3 L 22,3 L 22,7 Z" fill="#4a1c00" opacity="0.4"/>
+
+  <!-- Dictionary text lines on left page -->
+  <g stroke="white" stroke-linecap="round" opacity="0.38">
+    <line x1="5.5" y1="9"  x2="18.5" y2="9"  stroke-width="1.3"/>
+    <line x1="5.5" y1="13" x2="16.5" y2="13" stroke-width="1.3"/>
+    <line x1="5.5" y1="17" x2="18.5" y2="17" stroke-width="1.3"/>
+    <line x1="5.5" y1="21" x2="14"   y2="21" stroke-width="1.3"/>
+    <line x1="5.5" y1="25" x2="18.5" y2="25" stroke-width="1.3"/>
+    <line x1="5.5" y1="29" x2="16"   y2="29" stroke-width="1.3"/>
+  </g>
+
+  <!-- ── Book spine ─────────────────────────────────────────────── -->
+  <path d="M 22,3 L 30,3 L 30,35 L 22,35 Z" fill="url(#spine-g)"/>
+  <!-- Spine highlight line -->
+  <line x1="25.5" y1="4" x2="25.5" y2="34"
+        stroke="white" stroke-width="0.7" opacity="0.18"/>
+  <!-- Spine top and bottom bands -->
+  <rect x="22" y="3"  width="8" height="2.5" rx="0" fill="#3a1400" opacity="0.5"/>
+  <rect x="22" y="32" width="8" height="2.5" rx="0" fill="#3a1400" opacity="0.5"/>
+
+  <!-- ── Right page (P side) ────────────────────────────────────── -->
+  <path d="M 30,3 L 53,3 Q 56,3 56,6 L 56,36 Q 45,35 30,35 Z"
+        fill="url(#rp)"/>
+
+  <!-- Right page corner fold -->
+  <path d="M 53,3 L 56,3 L 56,7 Z" fill="#4a1c00" opacity="0.35"/>
+
+  <!-- ── Letter P (white, even-odd creates transparent bowl interior) ── -->
+  <path fill="white" fill-rule="evenodd" d="
+    M 33,36
+    L 33,7
+    L 41,7
+    Q 54,7  54,17
+    Q 54,27 41,27
+    L 38,27
+    L 38,36
+    Z
+    M 38,12
+    L 41,12
+    Q 51,12 51,17
+    Q 51,22 41,22
+    L 38,22
+    Z
+  "/>
+</svg>
