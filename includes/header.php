@@ -28,7 +28,7 @@ function navLink(string $page, string $label, string $current): string
     <title><?= htmlspecialchars(($pageTitle ?? 'Home') . ' — Peddi') ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500;600&family=Noto+Serif+Telugu:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="<?= APP_BASE ?>/assets/css/main.css">
@@ -41,7 +41,7 @@ function navLink(string $page, string $label, string $current): string
 <!-- data-app-base lets JS files read APP_BASE without inline PHP in script tags -->
 <div id="appConfig" data-app-base="<?= htmlspecialchars(APP_BASE) ?>" hidden></div>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-peddi">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2 text-decoration-none"
            href="<?= APP_BASE ?>/index.php">

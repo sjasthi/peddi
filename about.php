@@ -9,8 +9,7 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ── Hero banner ───────────────────────────────────────────────────────── -->
-<div class="rounded-3 p-4 p-md-5 mb-5 text-center"
-     style="background: linear-gradient(135deg, #1a1d23 0%, #2d3250 100%); color:#fff">
+<div class="rounded-3 p-4 p-md-5 mb-5 text-center about-hero-banner">
     <img src="<?= APP_BASE ?>/assets/images/peddi-logo.svg"
          alt="Peddi" height="80" style="width:auto" class="mb-3">
     <div class="peddi-logo peddi-logo-xl mb-1">Peddi</div>
@@ -89,7 +88,7 @@ require_once __DIR__ . '/includes/header.php';
                         <i class="bi bi-code-slash fs-1 text-primary"></i>
                     </div>
                     <h2 class="h5 mb-0 mt-3">Siva Jasthi</h2>
-                    <span class="text-body-secondary small">Founder &amp; Chief Instructor &commat; Learn and Help</span>
+                    <span class="text-body-secondary small">Founder, Presdient &amp; Chief Instructor &commat; Learn and Help</span>
                 </div>
 
                 <p class="text-body-secondary">

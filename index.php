@@ -15,86 +15,79 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ── Hero ─────────────────────────────────────────────────── -->
-<section class="hero-immersive mb-5">
-    <div class="row g-0">
+<section class="hero-manuscript mb-5 px-3 px-md-5 py-4 py-md-5 text-center">
 
-        <!-- Left: brand + search ──────────────────────────────── -->
-        <div class="col-lg-7 hero-left d-flex flex-column justify-content-center">
+    <!-- Logo mark -->
+    <img src="<?= APP_BASE ?>/assets/images/peddi-logo.svg"
+         alt="Peddi" height="72" style="width:auto" class="mb-2">
 
-            <div class="d-flex align-items-center gap-3 mb-3">
-                <img src="<?= APP_BASE ?>/assets/images/peddi-logo.svg"
-                     alt="Peddi" height="64" style="width:auto">
-                <span class="peddi-logo peddi-logo-xl">Peddi</span>
-            </div>
+    <!-- Wordmark -->
+    <h1 class="peddi-logo peddi-logo-xl mb-3">Peddi</h1>
 
-            <p class="hero-tagline mb-1">
-                A living archive of Indic words — Telugu, Sanskrit, Hindi, and English,
-                compiled by <strong>Peddi Sambasiva Rao</strong>.
-            </p>
-            <p class="hero-sub mb-4">
-                <?= number_format($totalWords) ?> entries across <?= $totalDicts ?> dictionaries.
-                Free to search, forever.
-            </p>
-
-            <!-- Search -->
-            <form id="heroSearchForm" action="<?= APP_BASE ?>/search.php" method="get"
-                  class="hero-search mb-4" autocomplete="off">
-                <div class="row g-2">
-                    <div class="col-12 col-sm">
-                        <label for="heroQuery" class="visually-hidden">Search word</label>
-                        <input type="text" id="heroQuery" name="q"
-                               class="form-control form-control-lg"
-                               placeholder="Enter a word…" required>
-                    </div>
-                    <div class="col-12 col-sm-auto">
-                        <label for="heroDictionary" class="visually-hidden">Dictionary</label>
-                        <select id="heroDictionary" name="d" class="form-select form-select-lg">
-                            <option value="0" <?= $prefs['default_dictionary_id'] === 0 ? 'selected' : '' ?>>
-                                All Dictionaries
-                            </option>
-                            <?php foreach ($dicts as $d): ?>
-                            <option value="<?= (int) $d['id'] ?>"
-                                <?= $prefs['default_dictionary_id'] === (int) $d['id'] ? 'selected' : '' ?>>
-                                <?= htmlspecialchars($d['name']) ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="col-12 col-sm-auto">
-                        <button type="submit" class="btn btn-warning btn-lg w-100 fw-semibold">
-                            <i class="bi bi-search me-1"></i>Search
-                        </button>
-                    </div>
-                </div>
-            </form>
-
-            <!-- Stat pills -->
-            <div class="d-flex flex-wrap gap-2">
-                <span class="hero-pill">
-                    <i class="bi bi-collection text-warning me-1"></i><?= $totalDicts ?> Dictionaries
-                </span>
-                <span class="hero-pill">
-                    <i class="bi bi-alphabet text-info me-1"></i><?= number_format($totalWords) ?> Entries
-                </span>
-                <span class="hero-pill">
-                    <i class="bi bi-translate text-success me-1"></i>4 Search Modes
-                </span>
-                <a href="<?= APP_BASE ?>/catalog.php" class="hero-pill text-decoration-none">
-                    <i class="bi bi-journals text-warning me-1"></i>Browse Catalog
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Right: welcome image ───────────────────────────────── -->
-        <div class="col-lg-5 hero-right d-none d-lg-flex align-items-end justify-content-center">
-            <img src="https://www.projectabcd.com/images/dress_images/Slide1.PNG"
-                 alt="Namaste — Welcome to Peddi"
-                 class="hero-welcome-img"
-                 onerror="this.parentElement.style.display='none'">
-        </div>
-
+    <!-- Ornamental rule -->
+    <div class="hero-rule mb-3">
+        <span class="hero-rule-dot"></span>
+        <span class="hero-rule-dot"></span>
+        <span class="hero-rule-dot"></span>
     </div>
+
+    <!-- Bilingual tagline -->
+    <div class="hero-bilingual mb-1">
+        <span class="hero-en">A living archive of Indic words</span>
+        <span class="hero-sep" aria-hidden="true">✦</span>
+        <span class="hero-tel font-telugu">పదాల సజీవ సంపద</span>
+    </div>
+    <p class="hero-sub-line mb-4">
+        <?= number_format($totalWords) ?> entries across <?= $totalDicts ?> dictionaries
+        &mdash; compiled by <em>Peddi Sambasiva Rao</em>. Free to search, forever.
+    </p>
+
+    <!-- Search bar -->
+    <div class="hero-search-wrap mx-auto mb-4">
+        <form id="heroSearchForm" action="<?= APP_BASE ?>/search.php" method="get"
+              autocomplete="off">
+            <div class="d-flex flex-column flex-sm-row gap-2 hero-search-bar">
+                <label for="heroQuery" class="visually-hidden">Search word</label>
+                <input type="text" id="heroQuery" name="q"
+                       class="form-control form-control-lg flex-grow-1"
+                       placeholder="Search a word — e.g. ధర్మం, karma, love…"
+                       required>
+                <label for="heroDictionary" class="visually-hidden">Dictionary</label>
+                <select id="heroDictionary" name="d"
+                        class="form-select form-select-lg" style="width:auto;min-width:155px">
+                    <option value="0" <?= $prefs['default_dictionary_id'] === 0 ? 'selected' : '' ?>>
+                        All Dictionaries
+                    </option>
+                    <?php foreach ($dicts as $d): ?>
+                    <option value="<?= (int) $d['id'] ?>"
+                        <?= $prefs['default_dictionary_id'] === (int) $d['id'] ? 'selected' : '' ?>>
+                        <?= htmlspecialchars($d['name']) ?>
+                    </option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit" class="btn btn-saffron btn-lg px-4">
+                    <i class="bi bi-search me-1"></i>Search
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Stat pills -->
+    <div class="d-flex justify-content-center flex-wrap gap-2">
+        <span class="hero-pill">
+            <i class="bi bi-collection me-1"></i><?= $totalDicts ?> Dictionaries
+        </span>
+        <span class="hero-pill">
+            <i class="bi bi-alphabet me-1"></i><?= number_format($totalWords) ?> Entries
+        </span>
+        <span class="hero-pill">
+            <i class="bi bi-translate me-1"></i>4 Search Modes
+        </span>
+        <a href="<?= APP_BASE ?>/catalog.php" class="hero-pill text-decoration-none">
+            <i class="bi bi-journals me-1"></i>Browse Catalog
+        </a>
+    </div>
+
 </section>
 
 <!-- ── Quick-access strips ────────────────────────────────────── -->
